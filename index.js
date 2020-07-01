@@ -27,3 +27,8 @@ client.commercial("channel", 30)
 }).catch((err) => {
     //
 });
+
+client.on('connected', (adress, port) => {
+	console.log(client.getUsername() + " s'est connecté sur : " + adress + ", port : " + port);
+	client.say("#iamfabriceg", "Hello Twitch ! I'm a real human Kappa");
+});
