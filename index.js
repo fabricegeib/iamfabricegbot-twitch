@@ -15,28 +15,20 @@ const client = new tmi.Client({
 
 client.connect();
 
+var minutes = Math.floor(process.uptime() / 60);
+let seconds = (Math.floor(process.uptime() * 1000) / 1000);
+
 client.on('message', (channel, tags, message, self) => {
 	if(self) return;
 	if(message.toLowerCase() === '!hello') {
 		client.say(channel, `@${tags.username}, heya :) !`);
-  	}
-  	if(message.toLowerCase() === '!subs') {
+	}
+  if(message.toLowerCase() === '!subs') {
 		client.say(channel, `@${tags.username} voici le lien : https://www.twitch.tv/subs/iamfabriceg`);
 	}
-	if(message.toLowerCase() === 'wesh') {
-		client.say(channel, `Wesh alors, wesh alors Wesh alors, wesh alors Wesh alors`);
+	if(message.toLowerCase() === '!ping') {
+		client.say(channel, `Pong. Local - running for : ${process.uptime().toFixed(0)} s`);
 	}
-	if(message.toLowerCase() === 'twitter') {
-		client.say(channel, `https://twitter.com/iamfabriceg`);
-	}
-});
-
-setInterval(() => {
-	client.say("hello world - http://iamfabriceg.xyz");
-}, 10 * 60 * 10)
-
-client.on("subscription", function (channel, username, methods ) {
-	client.say(channel, username + " Has subscribed PogChamp " )
 });
 
 client.on("resub", function (channel, username, months, message, userstate, methods) {
@@ -50,7 +42,7 @@ client.commercial("channel", 30)
     //
 });
 
-// Called every time the bot connects to Twitch chat
-function onConnectedHandler (addr, port) {
-  console.log(`* Connected to ${addr}:${port}`);
-}
+client.on('connected', (adress, port) => {
+	console.log(client.getUsername() + " s'est connecté sur : " + adress + ", port : " + port);
+	client.say("#iamfabriceg", "Hello Twitch ! I'm a real human Kappa");
+});
