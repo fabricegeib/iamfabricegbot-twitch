@@ -11,14 +11,22 @@ const client = new tmi.Client({
 	},
 	channels: ["#iamfabriceg"]
 });
+
 client.connect();
+
+var minutes = Math.floor(process.uptime() / 60);
+let seconds = (Math.floor(process.uptime() * 1000) / 1000);
+
 client.on('message', (channel, tags, message, self) => {
 	if(self) return;
 	if(message.toLowerCase() === '!hello') {
 		client.say(channel, `@${tags.username}, heya :) !`);
-  }
+	}
   if(message.toLowerCase() === '!subs') {
 		client.say(channel, `@${tags.username} voici le lien : https://www.twitch.tv/subs/iamfabriceg`);
+	}
+	if(message.toLowerCase() === '!ping') {
+		client.say(channel, `Pong. Local - running for : ${process.uptime().toFixed(0)} s`);
 	}
 });
 client.commercial("channel", 30)
