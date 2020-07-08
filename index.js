@@ -1,3 +1,4 @@
+require('dotenv').config();
 const tmi = require('tmi.js');
 
 const client = new tmi.Client({
@@ -7,10 +8,10 @@ const client = new tmi.Client({
 		secure: true
 	},
 	identity: {
-		username: 'iamfabricegBot',
-		password: 'oauth:qa4iv5qk7ueptk2vxxzqkaiitqxeaq'
+		username: process.env.TWITCH_BOT,
+		password: process.env.TWITCH_AUTH_CODE
 	},
-	channels: ["#iamfabriceg"]
+	channels: [ process.env.TWITCH_USERNAME ]
 });
 
 client.connect();
@@ -29,6 +30,17 @@ client.on('message', (channel, tags, message, self) => {
 	if(message.toLowerCase() === '!ping') {
 		client.say(channel, `Pong. Local - running for : ${process.uptime().toFixed(0)} s`);
 	}
+	if(message.toLowerCase() === '!epic') {
+		client.say(channel, `Mon pseudo EPIC Games : iamfabriceg`);
+	}
+	if(message.toLowerCase() === '!stw-elements') {
+		client.say(channel, `Tableau des éléments de Fortnite : Sauver le Monde - https://iamfabriceg.xyz/fortnite/save-the-world/images/elements.png`);
+	}
+	if(message.toLowerCase() === '!zzz') {
+		client.action(channel, `est fatigué`);
+	}
+
+	
 });
 
 client.on("resub", function (channel, username, months, message, userstate, methods) {

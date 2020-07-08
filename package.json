@@ -1,0 +1,30 @@
+{
+  "name": "iamfabriceg-twitch-bot",
+  "version": "1.0.0",
+  "description": "my first twitch bot",
+  "main": "index.js",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "tmi.js": "^1.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabricegeib/iamfabriceg-twitch-bot.git"
+  },
+  "keywords": [
+    "tmijs",
+    "twitch",
+    "node"
+  ],
+  "author": "Fabrice Geib",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fabricegeib/iamfabriceg-twitch-bot/issues"
+  },
+  "homepage": "https://github.com/fabricegeib/iamfabriceg-twitch-bot#readme"
+}
