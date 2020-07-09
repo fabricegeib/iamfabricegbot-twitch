@@ -1,19 +1,18 @@
+require('dotenv').config();
 const tmi = require('tmi.js');
 
 // Define configuration options
 const opts = {
-    options: { debug: true },
+  options: { debug: true },
 	connection: {
 		reconnect: true,
 		secure: true
 	},
-  identity: {
-    username: 'iamfabricegBot',
-	password: 'oauth:qa4iv5qk7ueptk2vxxzqkaiitqxeaq'
-  },
-  channels: [
-    "#iamfabriceg"
-  ]
+	identity: {
+		username: process.env.TWITCH_BOT,
+		password: process.env.TWITCH_AUTH_CODE
+	},
+	channels: [ process.env.TWITCH_USERNAME ]
 };
 
 // Create a client with our options
