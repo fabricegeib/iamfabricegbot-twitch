@@ -86,6 +86,9 @@ client.on('message', (channel, tags, message, self) => {
 	if(message.toLowerCase() === '!eof') {
 		client.emoteonlyoff("iamfabriceg");
 	}
+	if(message.toLowerCase() === '!discord') {
+		client.emoteonlyoff("Lien de mon discord : https://discord.gg/ZBzGsW3");
+	}
 
 	let words = message.split(" ");
 	for(let word of words) {
