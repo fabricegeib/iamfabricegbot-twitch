@@ -74,8 +74,17 @@ client.on('message', (channel, tags, message, self) => {
 	if(message.toLowerCase() === '!epic') {
 		client.say(channel, `Mon pseudo EPIC Games : iamfabriceg`);
 	}
+	if(message.toLowerCase() === '!lol') {
+		client.say(channel, `	https://euw.op.gg/summoner/userName=fabriceg`);
+	}
+	if(message.toLowerCase() === '!instagram') {
+		client.say(channel, `Mon compte Instagram : https://www.instagram.com/iamfabriceg/`);
+	}
 	if(message.toLowerCase() === '!stw-elements') {
 		client.say(channel, `Tableau des éléments de Fortnite : Sauver le Monde - https://iamfabriceg.xyz/fortnite/save-the-world/images/elements.png`);
+	}
+	if(message.toLowerCase() === '!youtube') {
+		client.say(channel, `Ma chaine YouTube : https://www.youtube.com/channel/UCKv4GgFKQvPG2rt3MOZK8Xg/`);
 	}
 	if(message.toLowerCase() === '!zzz') {
 		client.action(channel, `est fatigué`);
@@ -90,8 +99,10 @@ client.on('message', (channel, tags, message, self) => {
 		client.say(channel, `Rejoins le discord : https://discord.gg/ZBzGsW3`);
 	}
 	if(message.toLowerCase() === '!commands') {
-		client.say(channel, `!hello !discord !epic !subs !stw-elements !zzz`);
+		client.say(channel, `La liste des commandes du bot est disponible sur cette page : !hello !discord !epic !subs !stw-elements !zzz`);
 	}
+
+	// -> Merci de ne pas publier de lien sans autorisation.
 
 	let words = message.split(" ");
 	for(let word of words) {
