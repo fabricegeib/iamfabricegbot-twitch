@@ -87,7 +87,10 @@ client.on('message', (channel, tags, message, self) => {
 		client.emoteonlyoff("iamfabriceg");
 	}
 	if(message.toLowerCase() === '!discord') {
-		client.emoteonlyoff("Lien de mon discord : https://discord.gg/ZBzGsW3");
+		client.say(channel, `Rejoins le discord : https://discord.gg/ZBzGsW3`);
+	}
+	if(message.toLowerCase() === '!commands') {
+		client.say(channel, `!hello !discord !epic !subs !stw-elements !zzz`);
 	}
 
 	let words = message.split(" ");
@@ -117,6 +120,26 @@ client.on('message', (channel, tags, message, self) => {
 
 client.on("resub", function (channel, username, months, message, userstate, methods) {
 	client.say(channel, username + " Has subscribed for " + months + " months in a row PogChamp " )
+});
+
+client.on('message', (channel, userstate, message, self) => {
+	if(self || message[0] !== '!') return;
+	let parameters = message.split(' ').filter(n => n);
+	let command = parameters.shift().slice(1).toLowerCase();
+	if(command === 'love') {
+			let msg = `${userstate['display-name']} envoie de l'amour à ${parameters[0]} <3 <3 <3`;
+			client.say(channel, msg);
+	}
+});
+
+client.on('message', (channel, userstate, message, self) => {
+if(self || message[0] !== '!') return;
+	let parameters = message.split(' ').filter(n => n);
+	let command = parameters.shift().slice(1).toLowerCase();
+	if(command === 'tg') {
+			let msg = `Ferme ta gueule on t'a dit ${parameters[0]} !`;
+			client.say(channel, msg);
+	}
 });
 
 client.commercial("channel", 30)
