@@ -1,3 +1,16 @@
+pm2 start index.js --watch --name twitch-iamBot
+pm2 stop index.js --watch --name twitch-iamBot
+
+pm2 start index.js --watch --name discord-iamBot
+pm2 stop index.js --watch --name discord-iamBot
+
+##
+Règles à respecter dans le chat pour préserver une bonne ambiance :
+- pas de spam
+- pas d'abus de majuscules et d'émotes
+- pas de demandes de jeu
+- soyez polis et courtois
+
 ## Bots
 patreon
 streamcord
