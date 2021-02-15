@@ -97,7 +97,7 @@ client.on('message', (channel, tags, message, self, isMod, user) => {
 		client.emoteonlyoff("iamfabriceg");
 	}
 	if (message.toLowerCase() === '!discord') {
-		client.say(channel, `Rejoins le discord : https://discord.gg/ZBzGsW3`);
+		client.say(channel, `Rejoins le discord : https://discord.gg/2CPt337u9p`);
 	}
 	if (message.toLowerCase() === '!commands') {
 		client.say(channel, `La liste des commandes du bot est disponible sur cette page : !hello !discord !epic !subs !stw-elements !zzz`);
@@ -128,6 +128,21 @@ client.on('message', (channel, tags, message, self, isMod, user) => {
 	// 		break;
 	// }
 
+});
+
+client.on('message', (channel, tags, message, self, username, months, userstate, methods, isMod, user) => {
+	// if (self) return;
+
+	// if (message.toLowerCase() === '!discord') {
+	// 	client.say(channel, `Rejoins le discord : https://discord.gg/2CPt337u9p`);
+	// }
+
+	// client.say(channel, username + " Has subscribed for " + months + " months in a row PogChamp ")
+
+	setInterval(() => {
+		// message.channel.send(`hy`).then(() => count++);
+		client.say(channel, `30s`);
+	}, 30000);
 });
 
 client.on("resub", function (channel, username, months, message, userstate, methods) {
