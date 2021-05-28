@@ -105,13 +105,13 @@ client.on('message', (channel, tags, message, self, isMod, user) => {
 
 	// -> Merci de ne pas publier de lien sans autorisation.
 
-	// let words = message.split(" ");
-	// for (let word of words) {
-	// 	let reaction = reactions[word];
-	// 	if (reaction) {
-	// 		client.say(channel, reaction);
-	// 	}
-	// }
+	let words = message.split(" ");
+	for (let word of words) {
+		let reaction = reactions[word];
+		if (reaction) {
+			client.say(channel, reaction);
+		}
+	}
 
 	// let helloTest = message;
 	// switch (message) {

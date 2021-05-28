@@ -9,12 +9,21 @@ const client = new tmi.Client({
 		username: 'iamfabriceg',
 		password: 'oauth:42a99yr7zmqlabu4procd0wja0bqu0'
 	},
-	channels: ["#iamfabriceg", "#littlebigwhale"]
+	channels: ["#nanojunior"]
 });
-client.connect();
+
+// client.connect();
+
 client.on('message', (channel, tags, message, self) => {
-	if(self) return;
-	if(message.toLowerCase() === '!mimi') {
-		client.say(channel, `lbwMimi lbwMimi lbwMimi lbwMimi lbwMimi lbwMimi lbwMimi lbwMimi lbwMimi lbwMimi lbwMimi lbwMimi`);
+	if (self) return;
+	if (message.toLowerCase() === '!love') {
+		client.say(channel, `<3 <3 <3`);
 	}
+});
+
+client.on('connected', (adress, port, channel) => {
+	console.log(client.getUsername() + " s'est connecté sur : " + adress + ", port : " + port);
+	client.say("#nanojunior", "Hello Twitch ! I'm a real human Kappa");
+	// client.say(channel, "Hello Twitch ! I'm a real human Kappa");
+
 });

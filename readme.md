@@ -17,6 +17,35 @@ streamcord
 muxy
 utip
 
+##
+
+channel #iamfabriceg
+tags { emotes: {}, 'emotes-raw': null, 'message-type': 'chat' }
+message Hello Twitch ! I'm a real human Kappa
+self true
+
+tags {
+  'badge-info': null,
+  badges: { moderator: '1', partner: '1' },
+  color: '#32C3A2',
+  'display-name': 'Streamlabs',
+  emotes: { '25': [ '3-7' ] },
+  flags: null,
+  id: 'f53d73c5-e853-4b40-ad7a-62925d1ba29e',
+  mod: true,
+  'room-id': '108366345',
+  subscriber: false,
+  'tmi-sent-ts': '1610244832786',
+  turbo: false,
+  'user-id': '105166207',
+  'user-type': 'mod',
+  'emotes-raw': '25:3-7',
+  'badge-info-raw': null,
+  'badges-raw': 'moderator/1,partner/1',
+  username: 'streamlabs',
+  'message-type': 'chat'
+}
+
 ## Streamcord help
 We recommend using the dashboard to easily manage notifications and live role.
 
